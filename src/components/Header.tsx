@@ -7,6 +7,7 @@ import { openCart } from '../state/actions'
 import { useSelector } from 'react-redux'
 import { ICartItem } from '../types/ICartItem'
 import { AppState } from '../state/store/store'
+import routes from '../pages/routes.json'
 
 const Header = () => {
   const cart = useSelector((state: AppState) => state.cart)
@@ -22,13 +23,13 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <Container>
-        <Link to="/shopping-cart">
+        <Link to={routes.HOME}>
           <Logo>FakeStore</Logo>
         </Link>
         <Navbar>
-          <NavbarLink to="/shopping-cart">Home</NavbarLink>
-          <NavbarLink to="/shopping-cart/products">Products</NavbarLink>
-          <NavbarLink to="/shopping-cart/contact">Contact</NavbarLink>
+          <NavbarLink to={routes.HOME}>Home</NavbarLink>
+          <NavbarLink to={routes.PRODUCTS}>Products</NavbarLink>
+          <NavbarLink to={routes.CONTACT}>Contact</NavbarLink>
           <ButtonContainer onClick={() => dispatch(openCart())}>
             <Button content={<FaShoppingCart />} shape="round" />
             {sumQuantity() > 0 ? <Quantity>{sumQuantity()}</Quantity> : ''}

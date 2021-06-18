@@ -3,14 +3,15 @@ import { Route, Switch } from 'react-router-dom'
 import Home from '../pages/Home'
 import Products from '../pages/Products'
 import Contact from '../pages/Contact'
+import routes from '../pages/routes.json'
 
 const Main = () => {
   return (
     <MainWrapper>
       <Switch>
-        <Route exact path="/shopping-cart" component={Home} />
-        <Route exact path="/shopping-cart/products" component={Products} />
-        <Route exact path="/shopping-cart/contact" component={Contact} />
+        <Route exact path={routes.HOME} component={Home} />
+        <Route path={routes.PRODUCTS} component={Products} />
+        <Route path={routes.CONTACT} component={Contact} />
       </Switch>
     </MainWrapper>
   )
