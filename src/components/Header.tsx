@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux'
 import Button from './elements/Button'
 import { openCart } from '../state/actions'
 import { useSelector } from 'react-redux'
-import { ICartItem } from '../types/ICartItem'
 import { AppState } from '../state/store/store'
 import routes from '../pages/routes.json'
 
@@ -14,10 +13,7 @@ const Header = () => {
   const dispatch = useDispatch()
 
   const sumQuantity = () => {
-    return cart.reduce(
-      (quantity: number, cartItem: ICartItem) => quantity + cartItem.quantity,
-      0
-    )
+    return cart.reduce((quantity, cartItem) => quantity + cartItem.quantity, 0)
   }
 
   return (

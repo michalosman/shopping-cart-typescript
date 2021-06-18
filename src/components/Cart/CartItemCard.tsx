@@ -3,6 +3,8 @@ import { FaMinus, FaPlus } from 'react-icons/fa'
 import Button from '../elements/Button'
 import { addToCart, removeFromCart } from '../../state/actions'
 import { useDispatch } from 'react-redux'
+import { CartItem } from '../../types/CartItem'
+import { Product } from '../../types/Product'
 
 interface Props {
   id: number
@@ -12,8 +14,9 @@ interface Props {
   quantity: number
 }
 
-const CartItem = ({ id, title, price, image, quantity }: Props) => {
-  const cartItem = { id, title, price, image, quantity }
+const CartItemCard = ({ id, title, price, image, quantity }: Props) => {
+  const cartItem: CartItem = { id, title, price, image, quantity }
+  const product: Product = { id, title, price, image }
   const dispatch = useDispatch()
 
   const formatTitle = (title: string) => {
@@ -25,7 +28,7 @@ const CartItem = ({ id, title, price, image, quantity }: Props) => {
   }
 
   return (
-    <CartItemWrapper>
+    <CartItemCardWrapper>
       <ImageContainer>
         <Image src={image}></Image>
       </ImageContainer>
@@ -34,25 +37,25 @@ const CartItem = ({ id, title, price, image, quantity }: Props) => {
         <div>${sumPrice()}</div>
         <AmountChanger>
           <Button
-            onClick={() => dispatch(removeFromCart(cartItem))}
+            onClick={() => dispatch(removeFromCart(product))}
             content={<FaMinus />}
             color="grey"
             animation="color"
           ></Button>
           <div>{cartItem.quantity}</div>
           <Button
-            onClick={() => dispatch(addToCart(cartItem))}
+            onClick={() => dispatch(addToCart(product))}
             content={<FaPlus />}
             color="grey"
             animation="color"
           ></Button>
         </AmountChanger>
       </Details>
-    </CartItemWrapper>
+    </CartItemCardWrapper>
   )
 }
 
-const CartItemWrapper = styled.div`
+const CartItemCardWrapper = styled.div`
   display: flex;
 `
 
@@ -88,4 +91,4 @@ const AmountChanger = styled.div`
   gap: 3rem;
 `
 
-export default CartItem
+export default CartItemCard

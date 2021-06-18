@@ -1,4 +1,4 @@
-import { IProduct } from './IProduct'
+import { Product } from './Product'
 
 export const OPEN_CART = 'OPEN_CART'
 export const CLOSE_CART = 'CLOSE_CART'
@@ -16,24 +16,21 @@ export interface CloseCartAction {
 
 export interface SetProductsAction {
   type: typeof SET_PRODUCTS
-  payload: IProduct[]
+  payload: Product[]
 }
 
 export interface AddToCartAction {
   type: typeof ADD_TO_CART
-  payload: IProduct
+  payload: Product
 }
 
 export interface RemoveFromCartAction {
   type: typeof REMOVE_FROM_CART
-  payload: IProduct
+  payload: Product
 }
 
 export type IsCartOpenAction = OpenCartAction | CloseCartAction
 export type ProductsAction = SetProductsAction
 export type CartAction = AddToCartAction | RemoveFromCartAction
 
-export type AppAction =
-  | IsCartOpenAction
-  | ProductsAction
-  | CartAction
+export type AppAction = IsCartOpenAction | ProductsAction | CartAction

@@ -1,16 +1,9 @@
-import {
-  ADD_TO_CART,
-  CartAction,
-  REMOVE_FROM_CART,
-} from '../../types/actions'
-import { ICartItem } from '../../types/ICartItem'
+import { ADD_TO_CART, CartAction, REMOVE_FROM_CART } from '../../types/actions'
+import { CartItem } from '../../types/CartItem'
 
-const INIT_STATE: ICartItem[] = []
+const INIT_STATE: CartItem[] = []
 
-const cartReducer = (
-  state = INIT_STATE,
-  action: CartAction
-): ICartItem[] => {
+const cartReducer = (state = INIT_STATE, action: CartAction) => {
   switch (action.type) {
     case ADD_TO_CART:
       const isInCart = state.find(

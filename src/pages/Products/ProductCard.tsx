@@ -2,20 +2,22 @@ import styled from 'styled-components'
 import Button from '../../components/elements/Button'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../state/actions/cart'
+import { Product } from '../../types/Product'
 
 interface Props {
   id: number
   title: string
   price: number
   image: string
+  category?: string
 }
 
-const Product = ({ id, title, price, image }: Props) => {
-  const product = { id, title, price, image }
+const ProductCard = ({ id, title, price, image, category }: Props) => {
+  const product: Product = { id, title, price, image, category }
   const dispatch = useDispatch()
 
   return (
-    <ProductWrapper>
+    <ProductCardWrapper>
       <ImageContainer>
         <Image src={image} alt={title} />
       </ImageContainer>
@@ -32,11 +34,11 @@ const Product = ({ id, title, price, image }: Props) => {
           animation="color"
         />
       </Details>
-    </ProductWrapper>
+    </ProductCardWrapper>
   )
 }
 
-const ProductWrapper = styled.div`
+const ProductCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid ${({ theme }) => theme.colors.grey.main};
@@ -78,4 +80,4 @@ const Title = styled.div`
   font-weight: bold;
 `
 
-export default Product
+export default ProductCard

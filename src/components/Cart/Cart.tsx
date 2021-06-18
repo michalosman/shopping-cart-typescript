@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { v4 as uuidv4 } from 'uuid'
 import { useSelector, useDispatch } from 'react-redux'
 import Button from '../elements/Button'
-import CartItem from './CartItem'
+import CartItemCard from './CartItemCard'
 import { closeCart } from '../../state/actions'
 import { AppState } from '../../state/store/store'
 
@@ -21,14 +21,14 @@ const Cart = () => {
   }
 
   const cartItems = cart.map((cartItem) => (
-    <CartItem
+    <CartItemCard
       key={uuidv4()}
       id={cartItem.id}
       title={cartItem.title}
       price={cartItem.price}
       image={cartItem.image}
       quantity={cartItem.quantity}
-    ></CartItem>
+    ></CartItemCard>
   ))
 
   return (

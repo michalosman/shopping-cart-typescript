@@ -1,7 +1,7 @@
 import { ProductsAction, SET_PRODUCTS } from '../../types/actions'
-import { IProduct } from '../../types/IProduct'
+import { Product } from '../../types/Product'
 
-const INIT_STATE: IProduct[] = []
+const INIT_STATE: Product[] = []
 
 const productsReducer = (state = INIT_STATE, action: ProductsAction) => {
   switch (action.type) {

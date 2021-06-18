@@ -1,4 +1,3 @@
-import { Dispatch } from 'redux'
 import { OPEN_CART, CLOSE_CART, AppAction } from '../../types/actions'
 
 const openCart = (): AppAction => {
@@ -13,16 +12,4 @@ const closeCart = (): AppAction => {
   }
 }
 
-const startOpenCart = () => {
-  return (dispatch: Dispatch<AppAction>) => {
-    dispatch(openCart())
-  }
-}
-
-const startCloseCart = () => {
-  return (dispatch: Dispatch<AppAction>) => {
-    dispatch(closeCart())
-  }
-}
-
-export { openCart, closeCart, startOpenCart, startCloseCart }
+export { openCart, closeCart}

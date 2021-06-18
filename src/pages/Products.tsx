@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
 import styled from 'styled-components'
-import Product from './Products/Product'
+import ProductCard from './Products/ProductCard'
 import { useDispatch, useSelector } from 'react-redux'
 import { setProducts } from '../state/actions/products'
 import { v4 as uuidv4 } from 'uuid'
 import { AppState } from '../state/store/store'
-import { IProduct } from '../types/IProduct'
+import { Product } from '../types/Product'
 
 const Products = () => {
   const products = useSelector((state: AppState) => state.products)
@@ -17,7 +17,7 @@ const Products = () => {
     return data
   }
 
-  const filterProducts = (products: IProduct[]) => {
+  const filterProducts = (products: Product[]) => {
     return products.filter(
       (product) =>
         product.category === `men's clothing` ||
@@ -34,12 +34,13 @@ const Products = () => {
   }, [])
 
   const productCards = products.map((product) => (
-    <Product
+    <ProductCard
       key={uuidv4()}
       id={product.id}
       title={product.title}
       price={product.price}
       image={product.image}
+      category={product.category}
     />
   ))
 
