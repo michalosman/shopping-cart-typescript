@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import Button from '../../components/elements/Button'
 import { useDispatch } from 'react-redux'
+import Button from '../../components/elements/Button'
 import { addToCart } from '../../state/actions/cart'
 import { Product } from '../../types/Product'
 

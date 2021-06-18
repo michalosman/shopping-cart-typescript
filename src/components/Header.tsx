@@ -1,12 +1,11 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { FaShoppingCart } from 'react-icons/fa'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Button from './elements/Button'
-import { openCart } from '../state/actions'
-import { useSelector } from 'react-redux'
-import { AppState } from '../state/store/store'
 import routes from '../pages/routes.json'
+import { openCart } from '../state/actions'
+import { AppState } from '../state/store/store'
 
 const Header = () => {
   const cart = useSelector((state: AppState) => state.cart)

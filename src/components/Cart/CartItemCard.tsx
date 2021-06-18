@@ -1,8 +1,8 @@
 import styled from 'styled-components'
+import { useDispatch } from 'react-redux'
 import { FaMinus, FaPlus } from 'react-icons/fa'
 import Button from '../elements/Button'
 import { addToCart, removeFromCart } from '../../state/actions'
-import { useDispatch } from 'react-redux'
 import { CartItem } from '../../types/CartItem'
 import { Product } from '../../types/Product'
 

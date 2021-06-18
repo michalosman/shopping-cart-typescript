@@ -1,9 +1,9 @@
-import { useEffect } from 'react'
 import styled from 'styled-components'
-import ProductCard from './Products/ProductCard'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { setProducts } from '../state/actions/products'
 import { v4 as uuidv4 } from 'uuid'
+import ProductCard from './Products/ProductCard'
+import { setProducts } from '../state/actions/products'
 import { AppState } from '../state/store/store'
 import { Product } from '../types/Product'
 
