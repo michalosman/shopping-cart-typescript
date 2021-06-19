@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FaShoppingCart } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
 import Button from './elements/Button'
-import routes from '../pages/routes.json'
+import routes from '../constants/routes.json'
 import { openCart } from '../state/actions'
 import { AppState } from '../state/store/store'
 

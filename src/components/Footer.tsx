@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { FaGithub } from 'react-icons/fa'
 import { useLocation } from 'react-router-dom'
 import backgroundWave from '../assets/images/background-wave.png'
-import routes from '../pages/routes.json'
+import routes from '../constants/routes.json'
 
 const Footer = () => {
   const location = useLocation()

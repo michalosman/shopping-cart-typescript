@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import Home from '../pages/Home'
 import Products from '../pages/Products'
 import Contact from '../pages/Contact'
-import routes from '../pages/routes.json'
+import routes from '../constants/routes.json'
 
 const Main = () => {
   return (
