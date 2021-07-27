@@ -48,7 +48,6 @@ const ProductCardWrapper = styled.div`
 `
 
 const Image = styled.img`
-  width: auto;
   height: 100%;
 `
 
